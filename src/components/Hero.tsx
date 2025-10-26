@@ -1,7 +1,48 @@
+import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { ArrowRight, TrendingUp, Users, Leaf } from "lucide-react";
 
 export function Hero() {
+  const [count10000, setCount10000] = useState(0);
+  const [count5000, setCount5000] = useState(0);
+  const [count100, setCount100] = useState(0);
+
+  useEffect(() => {
+    const duration = 2000; // 2 seconds
+    const steps = 60;
+    const interval = duration / steps;
+
+    // Count to 10000
+    const timer1 = setInterval(() => {
+      setCount10000((prev) => {
+        const next = prev + (10000 / steps);
+        return next >= 10000 ? 10000 : next;
+      });
+    }, interval);
+
+    // Count to 5000
+    const timer2 = setInterval(() => {
+      setCount5000((prev) => {
+        const next = prev + (5000 / steps);
+        return next >= 5000 ? 5000 : next;
+      });
+    }, interval);
+
+    // Count to 100
+    const timer3 = setInterval(() => {
+      setCount100((prev) => {
+        const next = prev + (100 / steps);
+        return next >= 100 ? 100 : next;
+      });
+    }, interval);
+
+    return () => {
+      clearInterval(timer1);
+      clearInterval(timer2);
+      clearInterval(timer3);
+    };
+  }, []);
+
   return (
     <section id="beranda" className="relative pt-20 min-h-screen flex items-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -24,23 +65,36 @@ export function Hero() {
           {/* Badge */}
           <div className="inline-flex items-center px-6 py-3 rounded-full bg-green-500/20 border-2 border-green-400/30 backdrop-blur-sm mb-8">
             <Leaf className="w-5 h-5 text-green-300 mr-2" />
-            <span className="text-green-100 font-bold text-lg">Platform Investasi Pohon #1 di Indonesia</span>
+            <span className="text-green-100 font-bold text-lg">
+              Platform Investasi Pohon #1 di Indonesia
+            </span>
           </div>
 
-          {/* Main Headline */}
-          <h1 className="text-white mb-8 text-6xl md:text-7xl lg:text-8xl leading-none">
-            Miliki Pohon<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-green-200 to-green-300">
+          {/* Main Headline with Special Font */}
+          <h1 className="text-white mb-8 text-6xl md:text-7xl lg:text-8xl leading-none font-extrabold tracking-tight">
+            <span className="block drop-shadow-2xl">Miliki Pohon</span>
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-green-200 via-green-300 to-green-200 drop-shadow-2xl animate-gradient bg-[length:200%_auto]">
               Tanpa Tanah
             </span>
-            <br />
-            Panen Tanpa Lelah
+            <span className="block drop-shadow-2xl">Panen Tanpa Lelah</span>
           </h1>
+          
+          <style>{`
+            @keyframes gradient {
+              0%, 100% { background-position: 0% 50%; }
+              50% { background-position: 100% 50%; }
+            }
+            .animate-gradient {
+              animation: gradient 3s ease infinite;
+            }
+          `}</style>
 
           {/* Subtitle */}
           <p className="text-green-100 text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed font-medium">
-            Platform investasi yang memungkinkan Anda memiliki pohon serta menikmati hasilnya 
-            tanpa perlu menanam dan merawat pohon. Bergabunglah dalam misi reboisasi Indonesia!
+            Platform investasi yang memungkinkan Anda memiliki
+            pohon serta menikmati hasilnya tanpa perlu menanam
+            dan merawat pohon. Bergabunglah dalam misi reboisasi
+            Indonesia!
           </p>
 
           {/* CTA Buttons */}
@@ -54,7 +108,7 @@ export function Hero() {
             </Button>
           </div>
 
-          {/* Stats */}
+          {/* Stats with Counting Animation */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all">
               <div className="flex items-center justify-center mb-4">
@@ -62,8 +116,12 @@ export function Hero() {
                   <TrendingUp className="w-8 h-8 text-white" />
                 </div>
               </div>
-              <h3 className="text-white text-4xl font-black mb-2">10,000+</h3>
-              <p className="text-green-200 text-lg font-semibold">Pohon Terkelola</p>
+              <h3 className="text-white text-4xl font-black mb-2">
+                {Math.floor(count10000).toLocaleString('id-ID')}+
+              </h3>
+              <p className="text-green-200 text-lg font-semibold">
+                Pohon Terkelola
+              </p>
             </div>
 
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all">
@@ -72,8 +130,12 @@ export function Hero() {
                   <Users className="w-8 h-8 text-white" />
                 </div>
               </div>
-              <h3 className="text-white text-4xl font-black mb-2">5,000+</h3>
-              <p className="text-green-200 text-lg font-semibold">Investor Aktif</p>
+              <h3 className="text-white text-4xl font-black mb-2">
+                {Math.floor(count5000).toLocaleString('id-ID')}+
+              </h3>
+              <p className="text-green-200 text-lg font-semibold">
+                Investor Aktif
+              </p>
             </div>
 
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all">
@@ -82,8 +144,12 @@ export function Hero() {
                   <Leaf className="w-8 h-8 text-white" />
                 </div>
               </div>
-              <h3 className="text-white text-4xl font-black mb-2">100+</h3>
-              <p className="text-green-200 text-lg font-semibold">Petani Mitra</p>
+              <h3 className="text-white text-4xl font-black mb-2">
+                {Math.floor(count100).toLocaleString('id-ID')}+
+              </h3>
+              <p className="text-green-200 text-lg font-semibold">
+                Petani Mitra
+              </p>
             </div>
           </div>
         </div>
@@ -91,8 +157,16 @@ export function Hero() {
 
       {/* Bottom Wave */}
       <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-          <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0V120Z" fill="white"/>
+        <svg
+          viewBox="0 0 1440 120"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full"
+        >
+          <path
+            d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0V120Z"
+            fill="white"
+          />
         </svg>
       </div>
     </section>
