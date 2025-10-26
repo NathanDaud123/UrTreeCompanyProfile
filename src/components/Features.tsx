@@ -1,11 +1,12 @@
+import React from "react";
 import { Card } from "./ui/card";
 import { TreePine, HandHeart, Building, Download, Smartphone, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
 
 export function Features() {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-gradient-to-b from-green-50 via-white to-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -13,11 +14,11 @@ export function Features() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center px-5 py-2 bg-green-100 rounded-full mb-4">
+          <div className="inline-flex items-center px-8 py-3 bg-green-100 rounded-full mb-4">
             <Sparkles className="w-4 h-4 text-green-600 mr-2" />
             <span className="text-green-700 font-bold">Fitur Unggulan</span>
           </div>
-          <h2 className="text-gray-900 mb-4">
+          <h2 className="text-gray-900 mb-4 text-4xl font-bold">
             <span className="text-green-600">3 Layanan Utama</span> Kami
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
@@ -37,7 +38,7 @@ export function Features() {
               <div className="bg-gradient-to-br from-green-500 to-green-600 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                 <TreePine className="h-10 w-10 text-white" />
               </div>
-              <h3 className="text-gray-900 mb-3">
+              <h3 className="text-gray-900 mb-3 text-xl font-bold">
                 <span className="text-green-600">MyTree</span>
               </h3>
               <p className="text-gray-600 leading-relaxed">
@@ -57,7 +58,7 @@ export function Features() {
               <div className="bg-gradient-to-br from-green-600 to-green-700 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                 <Building className="h-10 w-10 text-white" />
               </div>
-              <h3 className="text-gray-900 mb-3">
+              <h3 className="text-gray-900 mb-3 text-xl font-bold">
                 <span className="text-green-600">Solusi CSR</span>
               </h3>
               <p className="text-gray-600 leading-relaxed">
@@ -77,7 +78,7 @@ export function Features() {
               <div className="bg-gradient-to-br from-green-500 to-green-600 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                 <HandHeart className="h-10 w-10 text-white" />
               </div>
-              <h3 className="text-gray-900 mb-3">
+              <h3 className="text-gray-900 mb-3 text-xl font-bold">
                 <span className="text-green-600">MyDonation</span>
               </h3>
               <p className="text-gray-600 leading-relaxed">
@@ -87,41 +88,101 @@ export function Features() {
           </motion.div>
         </div>
 
-        {/* CTA */}
+        {/* CTA - Premium Design */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="relative"
+          transition={{ duration: 0.7 }}
+          className="relative mt-24"
         >
-          <Card className="bg-gradient-to-br from-green-600 to-green-700 text-white p-12 md:p-16 shadow-2xl overflow-hidden border-0">
-            {/* Decorative elements */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+          <div className="relative bg-gradient-to-br from-green-500 via-green-600 to-green-700 rounded-3xl shadow-[0_20px_60px_rgba(34,197,94,0.4)] overflow-hidden">
+            {/* Animated background circles */}
+            <div className="absolute -top-20 -right-20 w-96 h-96 bg-green-400/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-green-800/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_50%)]"></div>
+            </div>
             
-            <div className="max-w-4xl mx-auto text-center relative z-10">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl mb-6">
-                <Smartphone className="w-8 h-8 text-white" />
-              </div>
-              <h2 className="mb-4 text-white">
-                Siap Membuat <span className="text-green-200">Dampak</span>?
-              </h2>
-              <p className="text-green-100 mb-8 max-w-2xl mx-auto">
-                Unduh aplikasinya sekarang dan mulai perjalanan Anda menuju masa depan yang lebih hijau dan berkelanjutan.
-              </p>
-              <div className="flex justify-center gap-4 flex-wrap">
-                <button className="bg-white text-green-700 px-8 py-4 rounded-xl hover:bg-gray-50 transition-all shadow-xl font-bold flex items-center">
-                  <Download className="mr-2 h-5 w-5" />
-                  Download di App Store
-                </button>
-                <button className="bg-green-800 border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-green-900 transition-all shadow-xl font-bold flex items-center">
-                  <Download className="mr-2 h-5 w-5" />
-                  Download di Google Play
-                </button>
+            {/* Content Container */}
+            <div className="relative z-10 px-8 py-16 md:px-16 md:py-20">
+              <div className="max-w-4xl mx-auto text-center">
+                {/* Icon with animated background */}
+                <motion.div
+                  initial={{ scale: 0, rotate: -180 }}
+                  whileInView={{ scale: 1, rotate: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, type: "spring", bounce: 0.5 }}
+                  className="inline-flex items-center justify-center w-24 h-24 bg-white/20 backdrop-blur-md rounded-3xl mb-8 shadow-2xl border-2 border-white/30"
+                >
+                  <Smartphone className="w-12 h-12 text-white drop-shadow-lg" />
+                </motion.div>
+                
+                {/* Main Heading */}
+                <motion.h2
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight tracking-tight"
+                >
+                  Siap Membuat{' '}
+                  <span className="relative inline-block text-green-100 font-black drop-shadow-[0_0_20px_rgba(255,255,255,0.5)]">
+                    Dampak
+                  </span>
+                  {' '}?
+                </motion.h2>
+                
+                {/* Description */}
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="text-xl md:text-2xl text-white/95 mb-12 max-w-3xl mx-auto leading-relaxed font-medium"
+                >
+                  Unduh aplikasinya sekarang dan mulai perjalanan Anda menuju{' '}
+                  <span className="font-bold text-white drop-shadow-lg">masa depan yang lebih hijau</span>{' '}
+                  dan berkelanjutan
+                </motion.p>
+                
+                {/* CTA Buttons */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  className="flex flex-col sm:flex-row justify-center gap-6 sm:gap-8"
+                >
+                  <motion.button 
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="group relative bg-white text-green-700 px-10 py-5 rounded-2xl font-bold text-lg flex items-center justify-center shadow-[0_10px_40px_rgba(255,255,255,0.3)] hover:shadow-[0_15px_50px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden"
+                  >
+                    <span className="absolute inset-0 bg-gradient-to-r from-green-50 to-white opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                    <Download className="mr-3 h-6 w-6 relative z-10 group-hover:animate-bounce" />
+                    <span className="relative z-10">Download di App Store</span>
+                  </motion.button>
+                  
+                  <motion.button 
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="group relative bg-green-800/50 backdrop-blur-sm text-white px-10 py-5 rounded-2xl font-bold text-lg flex items-center justify-center shadow-[0_10px_40px_rgba(0,0,0,0.3)] hover:shadow-[0_15px_50px_rgba(0,0,0,0.4)] transition-all duration-300 border-2 border-white/40 hover:border-white/60 hover:bg-green-800/70"
+                  >
+                    <Download className="mr-3 h-6 w-6 group-hover:animate-bounce" />
+                    <span>Download di Google Play</span>
+                  </motion.button>
+                </motion.div>
               </div>
             </div>
-          </Card>
+            
+            {/* Bottom decorative wave */}
+            <div className="absolute bottom-0 left-0 right-0 h-24 opacity-20">
+              <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" preserveAspectRatio="none">
+                <path d="M0 100L60 85C120 70 240 40 360 30C480 20 600 30 720 40C840 50 960 60 1080 65C1200 70 1320 70 1380 70L1440 70V100H1380C1320 100 1200 100 1080 100C960 100 840 100 720 100C600 100 480 100 360 100C240 100 120 100 60 100H0Z" fill="white" fillOpacity="0.1"/>
+              </svg>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

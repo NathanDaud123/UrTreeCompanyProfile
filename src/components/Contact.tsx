@@ -28,7 +28,7 @@ export function Contact() {
   };
 
   return (
-    <section id="kontak" className="py-20 bg-white">
+    <section id="kontak" className="py-20 bg-gradient-to-br from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -37,13 +37,13 @@ export function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-block px-5 py-2 bg-green-100 rounded-full mb-4">
-            <span className="text-green-700 font-bold">Kontak Kami</span>
+          <div className="inline-block px-8 py-3 bg-green-100 rounded-full mb-4">
+            <span className="text-green-700 font-bold text-sm">Kontak Kami</span>
           </div>
-          <h2 className="text-gray-900 mb-4">
+          <h2 className="text-gray-900 mb-4 text-4xl font-bold">
             <span className="text-green-600">Hubungi</span> Kami
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Ada pertanyaan atau ingin bermitra dengan kami? Jangan ragu untuk menghubungi kami
           </p>
         </motion.div>
@@ -56,11 +56,11 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Card className="p-8 bg-white shadow-lg border-2 border-gray-100">
-              <h3 className="text-gray-900 mb-6">
+            <Card className="p-10 bg-gradient-to-br from-white to-green-50 shadow-xl border-2 border-green-200">
+              <h3 className="text-gray-900 mb-8 font-black text-xl">
                 Kirim <span className="text-green-600">Pesan</span>
               </h3>
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-gray-800 mb-2 font-bold text-sm">
                     Nama Lengkap
@@ -72,7 +72,7 @@ export function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full border-2 border-gray-200 focus:border-green-500 rounded-lg p-3"
+                    className="w-full border-2 border-gray-200 focus:border-green-500 rounded-lg p-3 bg-white"
                     placeholder="Masukkan nama Anda"
                   />
                 </div>
@@ -87,7 +87,7 @@ export function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full border-2 border-gray-200 focus:border-green-500 rounded-lg p-3"
+                    className="w-full border-2 border-gray-200 focus:border-green-500 rounded-lg p-3 bg-white"
                     placeholder="nama@email.com"
                   />
                 </div>
@@ -102,7 +102,7 @@ export function Contact() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full border-2 border-gray-200 focus:border-green-500 rounded-lg p-3"
+                    className="w-full border-2 border-gray-200 focus:border-green-500 rounded-lg p-3 bg-white"
                     placeholder="Topik pesan Anda"
                   />
                 </div>
@@ -116,12 +116,12 @@ export function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    className="w-full min-h-32 border-2 border-gray-200 focus:border-green-500 rounded-lg p-3"
+                    className="w-full min-h-32 border-2 border-gray-200 focus:border-green-500 rounded-lg p-3 bg-white"
                     placeholder="Tulis pesan Anda di sini..."
                   />
                 </div>
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                  <Button type="submit" className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white py-6 font-bold rounded-lg shadow-lg">
+                  <Button type="submit" className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white py-6 font-black text-lg rounded-xl shadow-xl">
                     <Send className="mr-2 h-5 w-5" />
                     Kirim Pesan
                   </Button>
@@ -138,7 +138,7 @@ export function Contact() {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            <Card className="p-6 bg-white hover:shadow-lg transition-all border-2 border-gray-100 hover:border-green-500">
+            <Card className="p-6 bg-gradient-to-br from-white to-green-50 hover:shadow-xl transition-all border-2 border-green-200 hover:border-green-500">
               <div className="flex items-start">
                 <motion.div
                   whileHover={{ rotate: 360 }}
@@ -148,7 +148,7 @@ export function Contact() {
                   <MapPin className="h-6 w-6 text-white" />
                 </motion.div>
                 <div>
-                  <h4 className="text-gray-900 mb-2 font-bold">Alamat Kantor</h4>
+                  <h4 className="text-gray-900 mb-2 font-black text-lg">Alamat Kantor</h4>
                   <p className="text-gray-600 leading-relaxed">
                     Jalan Borobudur Agung Timur IV, Mojolangu,<br />
                     Kec. Lowokwaru, Kota Malang,<br />
@@ -158,7 +158,7 @@ export function Contact() {
               </div>
             </Card>
 
-            <Card className="p-6 bg-white hover:shadow-lg transition-all border-2 border-gray-100 hover:border-green-500">
+            <Card className="p-6 bg-gradient-to-br from-white to-green-50 hover:shadow-xl transition-all border-2 border-green-200 hover:border-green-500">
               <div className="flex items-start">
                 <motion.div
                   whileHover={{ rotate: 360 }}
@@ -168,7 +168,7 @@ export function Contact() {
                   <Mail className="h-6 w-6 text-white" />
                 </motion.div>
                 <div>
-                  <h4 className="text-gray-900 mb-2 font-bold">Email</h4>
+                  <h4 className="text-gray-900 mb-2 font-black text-lg">Email</h4>
                   <a href="mailto:cs.urtree@gmail.com" className="text-gray-600 hover:text-green-600 font-medium">
                     cs.urtree@gmail.com
                   </a>
@@ -176,7 +176,7 @@ export function Contact() {
               </div>
             </Card>
 
-            <Card className="p-6 bg-white hover:shadow-lg transition-all border-2 border-gray-100 hover:border-green-500">
+            <Card className="p-6 bg-gradient-to-br from-white to-green-50 hover:shadow-xl transition-all border-2 border-green-200 hover:border-green-500">
               <div className="flex items-start">
                 <motion.div
                   whileHover={{ rotate: 360 }}
@@ -186,7 +186,7 @@ export function Contact() {
                   <Instagram className="h-6 w-6 text-white" />
                 </motion.div>
                 <div>
-                  <h4 className="text-gray-900 mb-2 font-bold">Instagram</h4>
+                  <h4 className="text-gray-900 mb-2 font-black text-lg">Instagram</h4>
                   <a
                     href="https://instagram.com/pt.urtree"
                     target="_blank"
@@ -200,7 +200,7 @@ export function Contact() {
             </Card>
 
             {/* Google Maps Embed */}
-            <Card className="p-3 bg-white overflow-hidden border-2 border-gray-100">
+            <Card className="p-3 bg-gradient-to-br from-white to-green-50 overflow-hidden border-2 border-green-200 shadow-lg">
               <div className="w-full h-64 bg-gray-200 rounded-xl overflow-hidden">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.4486389474186!2d112.6303!3d-7.9555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwNTcnMTkuOCJTIDExMsKwMzcnNDkuMSJF!5e0!3m2!1sen!2sid!4v1234567890"

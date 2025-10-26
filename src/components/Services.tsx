@@ -1,3 +1,4 @@
+import React from "react";
 import { Card } from "./ui/card";
 import { TreePine, Building, HandHeart, LineChart, MessageCircle, Newspaper, CheckCircle2 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
@@ -16,38 +17,44 @@ export function Services() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <div className="inline-block px-5 py-2 bg-green-100 rounded-full mb-4">
-                <span className="text-green-700 font-bold">Investasi Pohon</span>
-              </div>
-              <div className="flex items-center mb-6">
-                <div className="bg-gradient-to-br from-green-500 to-green-600 p-3 rounded-xl mr-4 shadow-lg">
-                  <TreePine className="h-8 w-8 text-white" />
+              <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center">
+                  <div className="bg-gradient-to-br from-green-500 to-green-600 p-3 rounded-xl mr-4 shadow-lg">
+                    <TreePine className="h-8 w-8 text-white" />
+                  </div>
+                  <h2 className="text-3xl font-black text-gray-900">
+                    <span className="text-green-600">MyTree</span>
+                  </h2>
                 </div>
-                <h2 className="text-gray-900">
-                  <span className="text-green-600">MyTree</span>
-                </h2>
+                <div className="inline-block px-8 py-3 bg-green-100 rounded-full">
+                  <span className="text-green-700 font-bold text-sm">Investasi Pohon</span>
+                </div>
               </div>
-              <p className="text-gray-700 mb-6 leading-relaxed">
+              <p className="text-gray-700 mb-8 leading-relaxed text-lg">
                 MyTree adalah program investasi di mana Anda mendanai pohon (seperti pohon buah atau kayu) yang dikelola petani lokal, dengan <span className="font-bold text-gray-900">potensi untuk mendapatkan bagi hasil</span> dari panennya di masa depan.
               </p>
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {[
-                  { title: "Potensi Bagi Hasil", desc: "Dapatkan keuntungan dari hasil panen pohon yang Anda investasikan" },
-                  { title: "Dampak Lingkungan", desc: "Berkontribusi langsung pada reboisasi dan pelestarian lingkungan" },
-                  { title: "Membantu Petani Lokal", desc: "Memberdayakan ekonomi petani lokal Indonesia" }
+                  { title: "Potensi Bagi Hasil", desc: "Dapatkan keuntungan dari hasil panen pohon yang Anda investasikan", icon: "💰" },
+                  { title: "Dampak Lingkungan", desc: "Berkontribusi langsung pada reboisasi dan pelestarian lingkungan", icon: "🌱" },
+                  { title: "Membantu Petani Lokal", desc: "Memberdayakan ekonomi petani lokal Indonesia", icon: "🤝" }
                 ].map((item, index) => (
-                  <div
+                  <motion.div
                     key={index}
-                    className="flex items-start bg-white p-5 rounded-xl border-2 border-gray-100 hover:border-green-500 hover:shadow-lg transition-all"
+                    whileHover={{ scale: 1.02, x: 5 }}
+                    className="group relative overflow-hidden bg-gradient-to-r from-white to-green-50 p-6 rounded-2xl border-2 border-green-200 hover:border-green-500 hover:shadow-xl transition-all duration-300"
                   >
-                    <div className="bg-green-600 rounded-lg p-2 mr-4 flex-shrink-0">
-                      <CheckCircle2 className="w-5 h-5 text-white" />
+                    <div className="flex items-start">
+                      <div className="bg-gradient-to-br from-green-500 to-green-600 w-12 h-12 rounded-xl mr-4 flex items-center justify-center shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform">
+                        <span className="text-2xl">{item.icon}</span>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-gray-900 mb-2 font-black text-lg">{item.title}</h4>
+                        <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-gray-900 mb-1 font-bold">{item.title}</h4>
-                      <p className="text-gray-600 text-sm">{item.desc}</p>
-                    </div>
-                  </div>
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-green-400 via-green-500 to-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
@@ -92,35 +99,49 @@ export function Services() {
               transition={{ duration: 0.5 }}
               className="order-1 md:order-2"
             >
-              <div className="inline-block px-5 py-2 bg-green-100 rounded-full mb-4">
-                <span className="text-green-700 font-bold">Untuk Perusahaan</span>
-              </div>
-              <div className="flex items-center mb-6">
-                <div className="bg-gradient-to-br from-green-600 to-green-700 p-3 rounded-xl mr-4 shadow-lg">
-                  <Building className="h-8 w-8 text-white" />
+              <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center">
+                  <div className="bg-gradient-to-br from-green-600 to-green-700 p-3 rounded-xl mr-4 shadow-lg">
+                    <Building className="h-8 w-8 text-white" />
+                  </div>
+                  <h2 className="text-3xl font-black text-gray-900">
+                    <span className="text-green-600">Solusi CSR</span>
+                  </h2>
                 </div>
-                <h2 className="text-gray-900">
-                  <span className="text-green-600">Solusi CSR</span>
-                </h2>
+                <div className="inline-block px-8 py-3 bg-green-100 rounded-full">
+                  <span className="text-green-700 font-bold text-sm">Untuk Perusahaan</span>
+                </div>
               </div>
-              <p className="text-gray-700 mb-6 leading-relaxed">
+              <p className="text-gray-700 mb-8 leading-relaxed text-lg">
                 Wujudkan program CSR yang <span className="font-bold text-gray-900">transparan, terukur, dan berdampak nyata</span>. UrTree adalah mitra CSR ideal untuk perusahaan Anda.
               </p>
-              <div className="space-y-4 mb-6">
+              <div className="space-y-3 mb-6">
                 {[
-                  { title: "Transparansi & Pelaporan ESG", desc: "Dokumentasi dampak lingkungan yang kredibel dan pelaporan ESG terverifikasi" },
-                  { title: "Manajemen Penanaman", desc: "Layanan lengkap dari perencanaan hingga eksekusi program penghijauan" },
-                  { title: "Co-branding Campaign", desc: "Kampanye bersama untuk meningkatkan citra perusahaan Anda" }
+                  { title: "Transparansi & Pelaporan ESG", desc: "Dokumentasi dampak lingkungan yang kredibel dan pelaporan ESG terverifikasi", icon: "📊" },
+                  { title: "Manajemen Penanaman", desc: "Layanan lengkap dari perencanaan hingga eksekusi program penghijauan", icon: "🌲" },
+                  { title: "Co-branding Campaign", desc: "Kampanye bersama untuk meningkatkan citra perusahaan Anda", icon: "🤝" }
                 ].map((item, index) => (
-                  <Card key={index} className="p-5 bg-white border-2 border-gray-100 hover:border-green-500 hover:shadow-lg transition-all">
-                    <h4 className="text-gray-900 mb-2 font-bold">{item.title}</h4>
-                    <p className="text-gray-600 text-sm">{item.desc}</p>
-                  </Card>
+                  <motion.div
+                    key={index}
+                    whileHover={{ scale: 1.02, x: 5 }}
+                    className="group relative overflow-hidden bg-gradient-to-r from-white to-green-50 p-6 rounded-2xl border-2 border-green-200 hover:border-green-500 hover:shadow-xl transition-all duration-300"
+                  >
+                    <div className="flex items-start">
+                      <div className="bg-gradient-to-br from-green-600 to-green-700 w-12 h-12 rounded-xl mr-4 flex items-center justify-center shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform">
+                        <span className="text-2xl">{item.icon}</span>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-gray-900 mb-2 font-black text-lg">{item.title}</h4>
+                        <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                      </div>
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-green-400 via-green-500 to-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                  </motion.div>
                 ))}
               </div>
-              <div className="bg-green-50 p-5 rounded-xl border-2 border-green-200">
-                <p className="text-gray-800 font-bold">
-                  💰 Biaya: <span className="text-green-600">15%</span> dari total anggaran CSR atau paket kemitraan tahunan yang dapat disesuaikan
+              <div className="bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-2xl border-2 border-green-300 shadow-lg">
+                <p className="text-gray-900 font-black text-base">
+                  💰 Biaya: <span className="text-green-600 text-xl">15%</span> dari total anggaran CSR atau paket kemitraan tahunan yang dapat disesuaikan
                 </p>
               </div>
             </motion.div>
@@ -138,22 +159,24 @@ export function Services() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <div className="inline-block px-5 py-2 bg-green-100 rounded-full mb-4">
-                <span className="text-green-700 font-bold">Donasi Penghijauan</span>
-              </div>
-              <div className="flex items-center mb-6">
-                <div className="bg-gradient-to-br from-green-500 to-green-600 p-3 rounded-xl mr-4 shadow-lg">
-                  <HandHeart className="h-8 w-8 text-white" />
+              <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center">
+                  <div className="bg-gradient-to-br from-green-500 to-green-600 p-3 rounded-xl mr-4 shadow-lg">
+                    <HandHeart className="h-8 w-8 text-white" />
+                  </div>
+                  <h2 className="text-3xl font-black text-gray-900">
+                    <span className="text-green-600">MyDonation</span>
+                  </h2>
                 </div>
-                <h2 className="text-gray-900">
-                  <span className="text-green-600">MyDonation</span>
-                </h2>
+                <div className="inline-block px-8 py-3 bg-green-100 rounded-full">
+                  <span className="text-green-700 font-bold text-sm">Donasi Penghijauan</span>
+                </div>
               </div>
-              <p className="text-gray-700 mb-6 leading-relaxed">
+              <p className="text-gray-700 mb-8 leading-relaxed text-lg">
                 MyDonation adalah program donasi murni (bisa satu kali atau rutin) untuk mendukung program penghijauan dan aforestasi. Sebagai bentuk apresiasi, Anda akan menerima <span className="font-bold text-gray-900">badge digital eksklusif</span> di profil Anda.
               </p>
-              <Card className="p-6 bg-white border-2 border-gray-100 mb-6">
-                <h4 className="text-gray-900 mb-4 font-bold">
+              <div className="bg-gradient-to-br from-white to-green-50 p-8 rounded-2xl border-2 border-green-200 mb-6 shadow-lg">
+                <h4 className="text-gray-900 mb-6 font-black text-xl">
                   Program Donasi <span className="text-green-600">Aktif</span>
                 </h4>
                 <div className="space-y-3">
@@ -162,23 +185,29 @@ export function Services() {
                     { emoji: "🌳", title: "Penghijauan Hutan Kota", loc: "Area Urban" },
                     { emoji: "🌱", title: "Reboisasi Lahan Kritis", loc: "Berbagai Daerah" }
                   ].map((program, index) => (
-                    <div
+                    <motion.div
                       key={index}
-                      className="flex items-center justify-between bg-green-50 p-4 rounded-xl border-2 border-green-100 hover:border-green-500 transition-all"
+                      whileHover={{ scale: 1.02, x: 5 }}
+                      className="group flex items-center bg-white p-5 rounded-xl border-2 border-gray-100 hover:border-green-500 hover:shadow-lg transition-all duration-300"
                     >
-                      <div>
-                        <p className="text-gray-900 font-bold">{program.title}</p>
-                        <p className="text-gray-600 text-sm">{program.loc}</p>
+                      <div className="flex items-center justify-center w-12 h-12 bg-green-50 rounded-xl mr-4 group-hover:bg-green-100 transition-colors">
+                        <span className="text-2xl group-hover:scale-110 transition-transform">{program.emoji}</span>
                       </div>
-                      <span className="text-3xl">{program.emoji}</span>
-                    </div>
+                      <div className="flex-1">
+                        <h5 className="text-gray-900 font-black text-base mb-1">{program.title}</h5>
+                        <p className="text-gray-600 text-sm leading-tight">{program.loc}</p>
+                      </div>
+                    </motion.div>
                   ))}
                 </div>
-              </Card>
-              <Card className="bg-gradient-to-br from-green-600 to-green-700 text-white p-6 border-0">
-                <h4 className="mb-2 font-bold">🏆 Reward Eksklusif</h4>
-                <p className="text-green-100 text-sm">Dapatkan badge digital eksklusif di profil Anda sebagai penghargaan atas kontribusi Anda untuk lingkungan.</p>
-              </Card>
+              </div>
+              <div className="bg-gradient-to-br from-green-600 to-green-700 text-white p-6 rounded-2xl border-0 shadow-xl">
+                <h4 className="mb-3 font-black text-lg flex items-center">
+                  <span className="text-2xl mr-2">🏆</span>
+                  Reward Eksklusif
+                </h4>
+                <p className="text-green-100 text-sm leading-relaxed">Dapatkan badge digital eksklusif di profil Anda sebagai penghargaan atas kontribusi Anda untuk lingkungan.</p>
+              </div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 30 }}
@@ -207,10 +236,10 @@ export function Services() {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <div className="inline-block px-5 py-2 bg-green-100 rounded-full mb-4">
-              <span className="text-green-700 font-bold">Fitur Tambahan</span>
+            <div className="inline-block px-8 py-3 bg-green-100 rounded-full mb-4">
+              <span className="text-green-700 font-bold text-sm">Fitur Tambahan</span>
             </div>
-            <h2 className="text-gray-900 mb-4">
+            <h2 className="text-gray-900 mb-4 text-4xl font-bold">
               <span className="text-green-600">Fitur Pendukung</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -220,9 +249,27 @@ export function Services() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { icon: LineChart, title: "Pelacakan (Tracking)", desc: "Semua investasi dan donasi Anda dipantau dengan laporan harian dari petani dan verifikasi bulanan dari tim kami. Menjamin akuntabilitas melalui pelaporan real-time." },
-              { icon: MessageCircle, title: "Konsultasi", desc: "Dapatkan layanan konsultasi dengan pakar kehutanan dan agribisnis kami untuk menjelaskan jenis pohon, potensi panen, serta risiko investasi." },
-              { icon: Newspaper, title: "Berita & Artikel", desc: "Konten edukatif terkini tentang lingkungan dan investasi hijau untuk menambah wawasan Anda." }
+              { 
+                icon: LineChart, 
+                title: "Pelacakan (Tracking)", 
+                desc: <>
+                  <span className="font-bold">Semua investasi dan donasi</span> Anda dipantau dengan <span className="font-bold">laporan harian dari petani</span> dan <span className="font-bold">verifikasi bulanan</span> dari tim kami. Menjamin akuntabilitas melalui pelaporan <span className="font-bold">real-time</span>.
+                </> 
+              },
+              { 
+                icon: MessageCircle, 
+                title: "Konsultasi", 
+                desc: <>
+                  Dapatkan layanan konsultasi dengan <span className="font-bold">pakar kehutanan dan agribisnis</span> kami untuk menjelaskan jenis pohon, <span className="font-bold">potensi panen</span>, serta <span className="font-bold">risiko investasi</span>.
+                </> 
+              },
+              { 
+                icon: Newspaper, 
+                title: "Berita & Artikel", 
+                desc: <>
+                  <span className="font-bold">Konten edukatif terkini</span> tentang <span className="font-bold">lingkungan</span> dan <span className="font-bold">investasi hijau</span> untuk menambah wawasan Anda.
+                </> 
+              }
             ].map((feature, index) => {
               const Icon = feature.icon;
               return (
@@ -234,10 +281,10 @@ export function Services() {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                 >
                   <Card className="p-8 hover:shadow-xl transition-all bg-white border-2 border-gray-100 hover:border-green-500 h-full">
-                    <div className="bg-gradient-to-br from-green-500 to-green-600 w-14 h-14 rounded-xl flex items-center justify-center mb-6 shadow-lg">
-                      <Icon className="h-7 w-7 text-white" />
+                    <div className="bg-gradient-to-br from-green-500 to-green-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                      <Icon className="h-8 w-8 text-white" />
                     </div>
-                    <h3 className="text-gray-900 mb-4">
+                    <h3 className="text-gray-900 mb-4 text-xl font-bold">
                       <span className="text-green-600">{feature.title}</span>
                     </h3>
                     <p className="text-gray-600 leading-relaxed text-sm">

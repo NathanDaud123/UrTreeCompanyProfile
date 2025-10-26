@@ -1,3 +1,4 @@
+import React from "react";
 import { Instagram, Mail, MapPin, Smartphone } from "lucide-react";
 import { motion } from "motion/react";
 import logoImage from "../assets/359324a7664b58526f420bb21c5e4b37a62aee04.png";
@@ -11,7 +12,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-16">
+    <footer style={{ backgroundColor: '#1f2937' }} className="text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-10 mb-12">
           {/* Company Info */}
@@ -20,20 +21,20 @@ export function Footer() {
               whileHover={{ scale: 1.05 }}
               className="mb-6"
             >
-              <img src={logoImage} alt="UrTree Logo" className="h-12 brightness-0 invert" />
+              <img src={logoImage} alt="UrTree Logo" className="h-12 filter brightness-0 invert" style={{ filter: 'brightness(0) invert(1)' }} />
             </motion.div>
             <p className="text-gray-300 mb-6 leading-relaxed text-sm">
               Platform investasi pohon dan reboisasi berkelanjutan untuk masa depan yang lebih hijau.
             </p>
             <div className="space-y-3">
               <div className="flex items-start">
-                <MapPin className="h-4 w-4 mr-2 mt-1 flex-shrink-0 text-green-400" />
+                <MapPin className="h-4 w-4 mr-2 mt-1 flex-shrink-0 text-white" />
                 <p className="text-gray-300 text-sm">
                   Jl. Borobudur Agung Timur IV, Mojolangu, Lowokwaru, Malang, Jawa Timur 65142
                 </p>
               </div>
               <div className="flex items-center">
-                <Mail className="h-4 w-4 mr-2 text-green-400" />
+                <Mail className="h-4 w-4 mr-2 text-white" />
                 <p className="text-gray-300 text-sm">cs.urtree@gmail.com</p>
               </div>
             </div>
@@ -47,7 +48,7 @@ export function Footer() {
                 <motion.li key={index} whileHover={{ x: 5 }}>
                   <button
                     onClick={() => scrollToSection(link)}
-                    className="text-gray-300 hover:text-green-400 transition-colors font-medium text-sm"
+                    className="text-gray-300 hover:text-white transition-colors font-medium text-sm"
                   >
                     → {link === "tentang" ? "Tentang Kami" : link === "csr" ? "Layanan CSR" : link === "mitra-petani" ? "Mitra Petani" : "FAQ"}
                   </button>
@@ -69,7 +70,7 @@ export function Footer() {
                 <motion.li key={index} whileHover={{ x: 5 }}>
                   <button
                     onClick={() => scrollToSection(service.id)}
-                    className="text-gray-300 hover:text-green-400 transition-colors font-medium text-sm"
+                    className="text-gray-300 hover:text-white transition-colors font-medium text-sm"
                   >
                     {service.name}
                   </button>
@@ -107,9 +108,9 @@ export function Footer() {
                 href="https://instagram.com/pt.urtree"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white/10 p-3 rounded-lg hover:bg-white/20 transition-all border border-white/20"
+                className="bg-white p-3 rounded-lg hover:bg-gray-100 transition-all"
               >
-                <Instagram className="h-5 w-5 text-white" />
+                <Instagram className="h-5 w-5 text-gray-900" />
               </motion.a>
             </div>
           </div>
@@ -117,15 +118,15 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 pt-8 text-center">
-          <p className="text-gray-400 font-medium text-sm mb-2">
+          <p className="text-gray-300 font-medium text-sm mb-2">
             © 2025 PT UrTree Cipta Lestari. All rights reserved.
           </p>
           <div className="flex justify-center space-x-4 text-sm">
-            <button className="text-gray-400 hover:text-green-400 transition-colors font-medium">
+            <button className="text-gray-300 hover:text-white transition-colors font-medium">
               Kebijakan Privasi
             </button>
-            <span className="text-gray-600">•</span>
-            <button className="text-gray-400 hover:text-green-400 transition-colors font-medium">
+            <span className="text-gray-300">•</span>
+            <button className="text-gray-300 hover:text-white transition-colors font-medium">
               Syarat & Ketentuan
             </button>
           </div>

@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Accordion,
   AccordionContent,
@@ -92,7 +93,7 @@ export function FAQ() {
 
   return (
     <section id="faq" className="py-20 bg-gradient-to-br from-gray-50 to-white">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -100,18 +101,18 @@ export function FAQ() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-block px-5 py-2 bg-green-100 rounded-full mb-4">
-            <span className="text-green-700 font-bold">FAQ</span>
+          <div className="inline-block px-8 py-3 bg-green-100 rounded-full mb-4">
+            <span className="text-green-700 font-bold text-sm">FAQ</span>
           </div>
-          <h2 className="text-gray-900 mb-4">
+          <h2 className="text-gray-900 mb-4 text-4xl font-bold">
             Pertanyaan yang <span className="text-green-600">Sering Diajukan</span>
           </h2>
-          <p className="text-gray-600">
+          <p className="text-gray-600 text-lg">
             Temukan jawaban atas pertanyaan Anda mengenai UrTree
           </p>
         </motion.div>
 
-        <div className="space-y-10">
+        <div className="space-y-16">
           {faqData.map((category, categoryIndex) => (
             <motion.div
               key={categoryIndex}
@@ -120,15 +121,15 @@ export function FAQ() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
             >
-              <div className="bg-gradient-to-r from-green-600 to-green-700 text-white p-5 rounded-xl mb-4 shadow-lg">
-                <h3 className="font-bold">{category.category}</h3>
+              <div className="bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-4 rounded-2xl mb-4 shadow-lg">
+                <h3 className="font-black text-lg">{category.category}</h3>
               </div>
-              <Accordion type="single" collapsible className="space-y-3">
+              <Accordion type="single" collapsible className="space-y-3 mb-8">
                 {category.questions.map((item, index) => (
                   <AccordionItem
                     key={index}
                     value={`item-${categoryIndex}-${index}`}
-                    className="border-2 border-gray-200 rounded-xl px-6 bg-white hover:border-green-500 transition-all"
+                    className="border-2 border-gray-300 rounded-xl px-6 bg-white hover:border-green-500 transition-all shadow-sm border-b-2"
                   >
                     <AccordionTrigger className="text-gray-900 hover:text-green-600 text-left font-bold">
                       {item.q}

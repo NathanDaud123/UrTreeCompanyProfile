@@ -39,13 +39,13 @@ export function FarmerPartnership() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <div className="inline-block px-5 py-2 bg-green-100 rounded-full mb-4">
-            <span className="text-green-700 font-bold">Mitra Petani</span>
+          <div className="inline-block px-8 py-3 bg-green-100 rounded-full mb-4">
+            <span className="text-green-700 font-bold text-sm">Mitra Petani</span>
           </div>
-          <h2 className="text-gray-900 mb-4">
+          <h2 className="text-gray-900 mb-4 text-4xl font-bold">
             Ayo Berkembang Bersama <span className="text-green-600">UrTree</span>!
           </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto">
+          <p className="text-gray-600 max-w-3xl mx-auto text-lg">
             Dapatkan pendanaan, dukungan agribisnis, dan tingkatkan kesejahteraan Anda dengan menjadi mitra penghijauan kami
           </p>
         </motion.div>
@@ -59,17 +59,17 @@ export function FarmerPartnership() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <Card className="p-8 bg-white border-2 border-gray-100 shadow-lg hover:shadow-xl transition-all h-full">
-              <h3 className="text-gray-900 mb-6">
+            <Card className="p-8 bg-gradient-to-br from-white to-green-50 border-2 border-green-200 shadow-lg hover:shadow-xl transition-all h-full">
+              <h3 className="text-gray-900 mb-6 font-black text-xl">
                 <span className="text-green-600">Keuntungan</span> Menjadi Mitra
               </h3>
               <div className="space-y-4">
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-start">
-                    <div className="bg-green-600 rounded-lg p-2 mr-3 flex-shrink-0">
+                    <div className="bg-gradient-to-br from-green-600 to-green-700 rounded-xl p-2.5 mr-4 flex-shrink-0 shadow-md">
                       <CheckCircle className="h-5 w-5 text-white" />
                     </div>
-                    <p className="text-gray-700 pt-1">{benefit}</p>
+                    <p className="text-gray-700 pt-1 font-medium">{benefit}</p>
                   </div>
                 ))}
               </div>
@@ -83,17 +83,17 @@ export function FarmerPartnership() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <Card className="p-8 bg-white border-2 border-gray-100 shadow-lg hover:shadow-xl transition-all h-full">
-              <h3 className="text-gray-900 mb-6">
+            <Card className="p-8 bg-gradient-to-br from-white to-green-50 border-2 border-green-200 shadow-lg hover:shadow-xl transition-all h-full">
+              <h3 className="text-gray-900 mb-6 font-black text-xl">
                 <span className="text-green-600">Syarat</span> Menjadi Mitra
               </h3>
               <div className="space-y-4">
                 {requirements.map((requirement, index) => (
                   <div key={index} className="flex items-start">
-                    <div className="bg-green-600 rounded-lg p-2 mr-3 flex-shrink-0">
+                    <div className="bg-gradient-to-br from-green-600 to-green-700 rounded-xl p-2.5 mr-4 flex-shrink-0 shadow-md">
                       <CheckCircle className="h-5 w-5 text-white" />
                     </div>
-                    <p className="text-gray-700 pt-1">{requirement}</p>
+                    <p className="text-gray-700 pt-1 font-medium">{requirement}</p>
                   </div>
                 ))}
               </div>
@@ -115,30 +115,38 @@ export function FarmerPartnership() {
 
             <div className="relative z-10">
               <div className="text-center mb-12">
-                <h3 className="mb-3 text-white">
+                <h3 className="mb-4 text-4xl md:text-5xl font-black text-white">
                   Daftarkan <span className="text-green-200">Lahanmu</span>
                 </h3>
-                <p className="text-green-100">7 langkah mudah untuk bergabung menjadi mitra petani UrTree</p>
+                <p className="text-green-100 text-lg md:text-xl">7 langkah mudah untuk bergabung menjadi mitra petani UrTree</p>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-7 gap-4 mb-10">
                 {steps.map((step, index) => {
                   const Icon = step.icon;
                   return (
                     <div key={index} className="text-center">
-                      <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 mb-3 hover:bg-white/20 transition-all">
+                      <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 mb-3 hover:bg-white/20 transition-all hover:scale-105">
                         <div className="bg-white w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-3 shadow-lg">
                           <Icon className="h-6 w-6 text-green-600" />
                         </div>
-                        <div className="text-green-200 mb-2 font-bold">{index + 1}</div>
+                        <div className="text-green-200 mb-2 font-black text-lg">{index + 1}</div>
                         <h4 className="text-white font-bold text-sm mb-1">{step.title}</h4>
-                        <p className="text-green-100 text-xs">{step.description}</p>
+                        <p className="text-green-100 text-xs leading-tight">{step.description}</p>
                       </div>
                     </div>
                   );
                 })}
               </div>
               <div className="text-center">
-                <Button className="bg-white text-green-700 hover:bg-gray-50 px-10 py-6 font-bold rounded-xl shadow-xl">
+                <Button 
+                  onClick={() => {
+                    const element = document.getElementById('siap-membuat-dampak');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                  className="bg-white text-green-700 hover:bg-gray-50 px-12 py-7 font-black text-lg rounded-xl shadow-xl hover:scale-105 transition-transform"
+                >
                   Daftar Sebagai Mitra Petani
                 </Button>
               </div>
