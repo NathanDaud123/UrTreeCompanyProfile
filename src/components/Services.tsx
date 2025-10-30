@@ -8,7 +8,7 @@ export function Services() {
   return (
     <>
       {/* MyTree */}
-      <section id="mytree" className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section id="mytree" className="py-20 bg-gradient-to-br from-gray-50 to-white overflow-hidden max-w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -76,7 +76,7 @@ export function Services() {
       </section>
 
       {/* CSR */}
-      <section id="csr" className="py-20 bg-white">
+      <section id="csr" className="py-20 bg-white overflow-hidden max-w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -150,7 +150,7 @@ export function Services() {
       </section>
 
       {/* MyDonation */}
-      <section id="mydonation" className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section id="mydonation" className="py-20 bg-gradient-to-br from-gray-50 to-white overflow-hidden max-w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -159,7 +159,7 @@ export function Services() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <div className="flex items-center justify-between mb-8">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 gap-4">
                 <div className="flex items-center">
                   <div className="bg-gradient-to-br from-green-500 to-green-600 p-3 rounded-xl mr-4 shadow-lg">
                     <HandHeart className="h-8 w-8 text-white" />
@@ -168,7 +168,7 @@ export function Services() {
                     <span className="text-green-600">MyDonation</span>
                   </h2>
                 </div>
-                <div className="inline-block px-8 py-3 bg-green-100 rounded-full">
+                <div className="inline-block px-6 py-3 bg-green-100 rounded-full self-start sm:self-auto">
                   <span className="text-green-700 font-bold text-sm">Donasi Penghijauan</span>
                 </div>
               </div>
@@ -227,7 +227,7 @@ export function Services() {
       </section>
 
       {/* Fitur Pendukung */}
-      <section id="fitur-pendukung" className="py-20 bg-white">
+      <section id="fitur-pendukung" className="py-20 bg-white overflow-hidden max-w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

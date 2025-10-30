@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 
 export function Features() {
   return (
-    <section className="py-20 bg-gradient-to-b from-green-50 via-white to-white relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-b from-green-50 via-white to-white relative overflow-hidden max-w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -95,11 +95,12 @@ export function Features() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
           className="relative mt-24"
+          data-section="siap-membuat-dampak"
         >
           <div className="relative bg-gradient-to-br from-green-500 via-green-600 to-green-700 rounded-3xl shadow-[0_20px_60px_rgba(34,197,94,0.4)] overflow-hidden">
             {/* Animated background circles */}
-            <div className="absolute -top-20 -right-20 w-96 h-96 bg-green-400/20 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-green-800/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute -top-20 -right-4 md:-right-20 w-64 md:w-96 h-64 md:h-96 bg-green-400/20 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
+            <div className="absolute -bottom-20 -left-4 md:-left-20 w-64 md:w-96 h-64 md:h-96 bg-green-800/30 rounded-full blur-3xl animate-pulse pointer-events-none" style={{ animationDelay: '1s' }}></div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_50%)]"></div>
             </div>
@@ -164,21 +165,24 @@ export function Features() {
                     <span className="relative z-10">Download di App Store</span>
                   </motion.button>
                   
-                  <motion.button 
+                  <motion.a
+                    href="https://play.google.com/store/apps/details?id=com.ub.pmw.urtree&pcampaignid=web_share"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.98 }}
                     className="group relative bg-green-800/50 backdrop-blur-sm text-white px-10 py-5 rounded-2xl font-bold text-lg flex items-center justify-center shadow-[0_10px_40px_rgba(0,0,0,0.3)] hover:shadow-[0_15px_50px_rgba(0,0,0,0.4)] transition-all duration-300 border-2 border-white/40 hover:border-white/60 hover:bg-green-800/70"
                   >
                     <Download className="mr-3 h-6 w-6 group-hover:animate-bounce" />
                     <span>Download di Google Play</span>
-                  </motion.button>
+                  </motion.a>
                 </motion.div>
               </div>
             </div>
             
             {/* Bottom decorative wave */}
-            <div className="absolute bottom-0 left-0 right-0 h-24 opacity-20">
-              <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" preserveAspectRatio="none">
+            <div className="absolute bottom-0 left-0 right-0 h-24 opacity-20 overflow-hidden">
+              <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" preserveAspectRatio="xMidYMax slice">
                 <path d="M0 100L60 85C120 70 240 40 360 30C480 20 600 30 720 40C840 50 960 60 1080 65C1200 70 1320 70 1380 70L1440 70V100H1380C1320 100 1200 100 1080 100C960 100 840 100 720 100C600 100 480 100 360 100C240 100 120 100 60 100H0Z" fill="white" fillOpacity="0.1"/>
               </svg>
             </div>

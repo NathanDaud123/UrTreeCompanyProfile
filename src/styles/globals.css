@@ -192,4 +192,51 @@
 
 html {
   font-size: var(--font-size);
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  position: relative;
+}
+
+/* Prevent horizontal overflow for all elements */
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ensure all sections don't overflow */
+section {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Fix for absolute positioned elements */
+.absolute {
+  max-width: 100vw;
+}
+
+/* Fix for fixed positioned elements */
+.fixed {
+  max-width: 100vw;
+}
+
+/* Ensure images don't cause overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix for SVG elements */
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix for iframe elements */
+iframe {
+  max-width: 100%;
 }

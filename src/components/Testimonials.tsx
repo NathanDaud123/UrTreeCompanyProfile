@@ -1,3 +1,4 @@
+import React from "react";
 import { Card } from "./ui/card";
 import { Star, Quote } from "lucide-react";
 import { motion } from "motion/react";
@@ -25,7 +26,7 @@ export function Testimonials() {
   ];
 
   return (
-    <section id="testi" className="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section id="testi" className="py-20 bg-gradient-to-br from-gray-50 to-white overflow-hidden max-w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

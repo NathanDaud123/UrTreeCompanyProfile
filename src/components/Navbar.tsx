@@ -106,6 +106,13 @@ export function Navbar() {
               </AnimatePresence>
             </div>
             <button
+              onClick={() => scrollToSection("marketplace")}
+              className="text-gray-700 hover:text-green-600 transition-colors font-semibold relative group"
+            >
+              Marketplace
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 group-hover:w-full transition-all duration-300"></span>
+            </button>
+            <button
               onClick={() => scrollToSection("mitra-petani")}
               className="text-gray-700 hover:text-green-600 transition-colors font-semibold relative group"
             >
@@ -197,6 +204,12 @@ export function Navbar() {
                   Fitur Pendukung
                 </button>
               </div>
+              <button
+                onClick={() => scrollToSection("marketplace")}
+                className="block w-full text-left px-3 py-2 text-gray-700 hover:bg-green-50 hover:text-green-700 rounded-lg font-semibold"
+              >
+                Marketplace
+              </button>
               <button
                 onClick={() => scrollToSection("mitra-petani")}
                 className="block w-full text-left px-3 py-2 text-gray-700 hover:bg-green-50 hover:text-green-700 rounded-lg font-semibold"

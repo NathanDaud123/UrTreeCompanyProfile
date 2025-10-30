@@ -11,16 +11,16 @@ import fanisyaPhoto from "../assets/bcb4b930e6c324b8c87f65bbf64c0f524ffa961e.png
 
 export function About() {
   const directors = [
-    { name: "Yuven Reksa Pratama", position: "Chief Executive Officer (CEO)", initial: "YR", photo: yuvenPhoto, photoStyle: "object-[center_50%] scale-100" },
-    { name: "Berlian Davis Dwi Mubarok", position: "Chief Marketing Officer (CMO)", initial: "BD", photo: davisPhoto, photoStyle: "object-[center_50%] scale-100" },
-    { name: "Johan Arizona", position: "Chief Technology Officer (CTO)", initial: "JA", photo: johanPhoto, photoStyle: "object-[center_60%] scale-[0.85]" },
-    { name: "Alexander Imanuel Widjanarko", position: "Chief Financial Officer (CFO)", initial: "AW", photo: alexPhoto, photoStyle: "object-[center_65%] scale-100" },
-    { name: "Isri Amirul Haq", position: "Chief Operating Officer (COO)", initial: "IH", photo: isriPhoto, photoStyle: "object-[center_55%] scale-100" },
+    { name: "Yuven Reksa Pratama", position: "Founder & Chief Executive Officer (CEO)", initial: "YR", photo: yuvenPhoto, photoStyle: "object-[center_50%] scale-100" },
+    { name: "Alexander Imanuel Widjanarko", position: "Co-Founder & Chief Financial Officer (CFO)", initial: "AW", photo: alexPhoto, photoStyle: "object-[center_65%] scale-100" },
+    { name: "Berlian Davis Dwi Mubarok", position: "Co-Founder & Chief Marketing Officer (CMO)", initial: "BD", photo: davisPhoto, photoStyle: "object-[center_50%] scale-100" },
+    { name: "Johan Arizona", position: "Co-Founder & Chief Technology Officer (CTO)", initial: "JA", photo: johanPhoto, photoStyle: "object-[center_60%] scale-[0.85]" },
+    { name: "Isri Amirul Haq", position: "Co-Founder & Chief Operating Officer (COO)", initial: "IH", photo: isriPhoto, photoStyle: "object-[center_55%] scale-100" },
     { name: "Fanisya Luthfiatma", position: "Chief Sustainability Officer (CSO)", initial: "FL", photo: fanisyaPhoto, photoStyle: "object-[40%_60%] scale-100" },
   ];
 
   return (
-    <section id="tentang" className="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section id="tentang" className="py-20 bg-gradient-to-br from-gray-50 to-white overflow-hidden max-w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

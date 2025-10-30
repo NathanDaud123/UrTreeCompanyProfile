@@ -12,7 +12,7 @@ export function Footer() {
   };
 
   return (
-    <footer style={{ backgroundColor: '#1f2937' }} className="text-white py-16">
+    <footer style={{ backgroundColor: '#1f2937' }} className="text-white py-16 overflow-hidden max-w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-10 mb-12">
           {/* Company Info */}

@@ -1,3 +1,4 @@
+import React from "react";
 import { Card } from "./ui/card";
 import { CheckCircle, Download, UserCheck, FileText, MapPin, ClipboardCheck, FileSignature, Play } from "lucide-react";
 import { Button } from "./ui/button";
@@ -29,7 +30,7 @@ export function FarmerPartnership() {
   ];
 
   return (
-    <section id="mitra-petani" className="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section id="mitra-petani" className="py-20 bg-gradient-to-br from-gray-50 to-white overflow-hidden max-w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -120,32 +121,32 @@ export function FarmerPartnership() {
                 </h3>
                 <p className="text-green-100 text-lg md:text-xl">7 langkah mudah untuk bergabung menjadi mitra petani UrTree</p>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-7 gap-4 mb-10">
+              <div className="grid grid-cols-2 md:grid-cols-7 gap-2 md:gap-3 mb-10 max-w-6xl mx-auto">
                 {steps.map((step, index) => {
                   const Icon = step.icon;
                   return (
-                    <div key={index} className="text-center">
-                      <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 mb-3 hover:bg-white/20 transition-all hover:scale-105">
-                        <div className="bg-white w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-3 shadow-lg">
-                          <Icon className="h-6 w-6 text-green-600" />
+                    <div key={index} className="text-center flex flex-col h-full">
+                      <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 md:p-4 mb-3 hover:bg-white/20 transition-all hover:scale-105 flex-1 flex flex-col min-h-[140px] md:min-h-[160px]">
+                        <div className="bg-white w-8 h-8 md:w-10 md:h-10 rounded-lg flex items-center justify-center mx-auto mb-3 shadow-lg flex-shrink-0">
+                          <Icon className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
                         </div>
-                        <div className="text-green-200 mb-2 font-black text-lg">{index + 1}</div>
-                        <h4 className="text-white font-bold text-sm mb-1">{step.title}</h4>
-                        <p className="text-green-100 text-xs leading-tight">{step.description}</p>
+                        <div className="text-green-200 mb-2 font-black text-sm md:text-base flex-shrink-0">{index + 1}</div>
+                        <h4 className="text-white font-bold text-xs mb-2 flex-shrink-0 leading-tight">{step.title}</h4>
+                        <p className="text-green-100 text-xs leading-tight flex-1">{step.description}</p>
                       </div>
                     </div>
                   );
                 })}
               </div>
-              <div className="text-center">
+              <div className="text-center px-2 md:px-4">
                 <Button 
                   onClick={() => {
-                    const element = document.getElementById('siap-membuat-dampak');
+                    const element = document.querySelector('[data-section="siap-membuat-dampak"]');
                     if (element) {
                       element.scrollIntoView({ behavior: 'smooth' });
                     }
                   }}
-                  className="bg-white text-green-700 hover:bg-gray-50 px-12 py-7 font-black text-lg rounded-xl shadow-xl hover:scale-105 transition-transform"
+                  className="bg-white text-green-700 hover:bg-gray-50 px-4 md:px-12 py-4 md:py-7 font-black text-sm md:text-lg rounded-xl shadow-xl hover:scale-105 transition-transform w-full max-w-sm md:max-w-md mx-auto"
                 >
                   Daftar Sebagai Mitra Petani
                 </Button>
